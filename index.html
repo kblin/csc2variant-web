@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>csc2variants</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link type="text/css" rel="stylesheet" href="fonts/roboto.css">
+    <link type="text/css" rel="stylesheet" href="fonts/material-icons.css">
+    <link type="text/css" rel="stylesheet" href="css/material.min.css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body class="mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__header-row">
+          <h3>covid-spike-classification based variant calling</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="#analyse" class="mdl-layout__tab is-active">Analyse</a>
+          <a href="#about" class="mdl-layout__tab">About</a>
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="analyse">
+            <section id="input" class="section--center">
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  Paste the output from <code>covid-spike-classification</code>
+                </div>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <div class="mdl-textfield mdl-js-textfield extrawide">
+                  <textarea id="csc-input" class="mdl-textfield__input" rows="10" placeholder="covid-spike-classification output"></textarea>
+                  <label class="mdl-textfield__label" for="csc-input">Mutation calls from <code>covid-spike-classification</code></label>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col"></div>
+                <div class="mdl-cell mdl-cell--3-col">
+                <button id="run-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                  <i class="material-icons">fingerprint</i>Call variants
+                </button>
+                </div>
+              </div>
+            </section>
+            <section id="output" class="section--center hidden">
+              <div class="mdl-grid">
+                <div class="mdl-col mdl-col--12-col">
+                  Variants detected
+                </div>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--12-col">
+                  <div class="mdl-textfield mdl-js-textfield extrawide">
+                    <textarea id="variant-calls" class="mdl-textfield__input" readonly></textarea>
+                    <label class="mdl-textfield__label" for="variant-calls">Detected variants</label>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-grid">
+                <div class="mdl-col mdl-col--5-col"></div>
+                <div class="mdl-col mdl-col--7-col">
+                  <button id="reset-button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                    <i class="material-icons">autorenew</i>Run again
+                  </button>
+                </div>
+              </div>
+            </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="about">
+            <section id="input" class="section--center">
+              blabla
+            </section>
+        </div>
+      </main>
+
+      <footer class="mdl-mini-footer">
+        <div class="mdl-mini-footer__left-section">
+          <div class="mdl-logo">© 2021 Technical University of Denmark</div>
+        </div>
+        <div class="mdl-mini-footer__right-section">
+          <ul class="mdl-mini-footer__link-list">
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/papaparse.js"></script>
+    <script type="text/javascript" src="js/material.min.js"></script>
+    <script src="js/run.js"></script>
+  </body>
+</html>
