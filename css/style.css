@@ -4,6 +4,10 @@ html, body {
     padding: 0;
 }
 
+a {
+    color: rgb(0,121,107);
+}
+
 .mdl-layout__tab-bar-button {
     display: none;
 }
