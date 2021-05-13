@@ -25,3 +25,7 @@ html, body {
 .hidden {
     display: none;
 }
+
+.is-link {
+    cursor: help;
+}

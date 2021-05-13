@@ -52,6 +52,18 @@
                 </div>
               </div>
             </section>
+
+            <section id="running" class="section--center hidden">
+              <div class="mdl-grid">
+                <div class="mdl-vell mdl-cell--4-col">
+                  Calling variants...
+                </div>
+                <div class="mdl-cell mdl-cell--4-col">
+                  <div id="progress" class="mdl-progress mdl-js-progress"></div>
+                </div>
+              </div>
+            </section>
+
             <section id="output" class="section--center hidden">
               <div class="mdl-grid">
                 <div class="mdl-col mdl-col--12-col">
@@ -60,10 +72,17 @@
               </div>
               <div class="mdl-grid">
                 <div class="mdl-cell mdl-cell--12-col">
-                  <div class="mdl-textfield mdl-js-textfield extrawide">
-                    <textarea id="variant-calls" class="mdl-textfield__input" readonly></textarea>
-                    <label class="mdl-textfield__label" for="variant-calls">Detected variants</label>
-                  </div>
+                  <table class="mdl-data-table mdl-js-data-table">
+                    <thead>
+                      <tr>
+                        <th class="mdl-data-table__cell--non-numeric">Sample</th>
+                        <th class="mdl-data-table__cell--non-numeric">Mutations</th>
+                        <th class="mdl-data-table__cell--non-numeric">Variants</th>
+                      </tr>
+                    </thead>
+                    <tbody id="variant-calls">
+                    </tbody>
+                  </table>
                 </div>
               </div>
               <div class="mdl-grid">
@@ -89,11 +108,20 @@
         </div>
         <div class="mdl-mini-footer__right-section">
           <ul class="mdl-mini-footer__link-list">
+            <li>Powered by <a href="https://outbreak.info/">outbreak.info</a></li>
             <li><a href="about.html">About</a></li>
           </ul>
         </div>
       </footer>
     </div>
+
+    <template id="variant-row">
+      <tr class="is-link">
+        <td class="mdl-data-table__cell--non-numeric"></td>
+        <td class="mdl-data-table__cell--non-numeric"></td>
+        <td class="mdl-data-table__cell--non-numeric"></td>
+      </tr>
+    </template>
 
     <script src="js/papaparse.js"></script>
     <script type="text/javascript" src="js/material.min.js"></script>
