@@ -79,9 +79,14 @@ async function callVariants(samples) {
     for (const [sample, mutations] of samples) {
         if (!variantCache.has(mutations)) {
             counter++;
+            progressBar.MaterialProgress.setProgress((counter / samples.length) * 100);
+
+            if (!mutations) {
+                continue;
+            }
+
             let encodedMutations = encodeURIComponent(mutations);
             let result = await fetch(`https://api.outbreak.info/genomics/mutations-by-lineage?mutations=${encodedMutations}`);
-            progressBar.MaterialProgress.setProgress((counter / samples.length) * 100);
             if (!result.ok) {
                 console.error(result.statusText);
                 continue;
