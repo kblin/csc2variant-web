@@ -96,7 +96,7 @@ async function callVariants(samples) {
                 console.error(data);
                 continue
             }
-            let lineages = data.results;
+            let lineages = data.results[mutations];
             lineages.sort((a, b) => {
                 return b.proportion - a.proportion;
             });
